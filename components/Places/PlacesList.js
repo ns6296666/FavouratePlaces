@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 import PlaceItem from "./PlaceItem";
 
 export default function PlacesList({ places }) {
-  if (!places || places == null) {
+  if (!places || places.length === 0) {
     <View style={styles.fallbackContainer}>
       <Text style={styles.fallbackText}>
         No Places yet - start adding some!
@@ -29,5 +29,6 @@ const styles = StyleSheet.create({
   },
   fallbackText: {
     fontSize: 16,
+    color: "black",
   },
 });
