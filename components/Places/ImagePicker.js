@@ -9,7 +9,7 @@ import { Colors } from "../constants/colors";
 import OutlinedButton from "../UI/OutlinedButton";
 
 export default function ImagePicker() {
-  const [imageObj, setImageObj] = useState({});
+  const [imageObj, setImageObj] = useState();
   const [cameraPermissionInformation, requestPermission] =
     useCameraPermissions();
 
@@ -42,7 +42,7 @@ export default function ImagePicker() {
     setImageObj(image.assets[0].uri);
   };
 
-  let imagePreview = <Text>No image taken yet!</Text>;
+  let imagePreview = <Text style={styles.text}>No image taken yet!</Text>;
 
   if (imageObj) {
     imagePreview = <Image source={{ uri: imageObj }} style={styles.image} />;
@@ -75,5 +75,8 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     borderRadius: 4,
+  },
+  text: {
+    textAlign: "center",
   },
 });

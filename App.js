@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import IconButton from "./components/UI/IconButton";
 import { Colors } from "./components/constants/colors";
+import Map from "./screens/Map";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +42,7 @@ export default function App() {
             })}
           />
           <Stack.Screen name="AddPlace" component={AddPlace} />
+          <Stack.Screen name="Map" component={Map} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
