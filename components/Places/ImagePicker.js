@@ -1,4 +1,4 @@
-import { Alert, Button, Image, StyleSheet, View, Text } from "react-native";
+import { Alert, Image, StyleSheet, View, Text } from "react-native";
 import {
   launchCameraAsync,
   useCameraPermissions,
@@ -69,9 +69,11 @@ const styles = StyleSheet.create({
     alignContent: "center",
     backgroundColor: Colors.primary100,
     borderRadius: 4,
+    overflow: "hidden",
   },
   image: {
     width: "100%",
     height: "100%",
+    borderRadius: 4,
   },
 });
