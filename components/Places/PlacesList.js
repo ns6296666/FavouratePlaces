@@ -15,6 +15,7 @@ export default function PlacesList({ places }) {
     <View>
       <FlatList
         data={places}
+        style={styles.list}
         key={(item) => item.id}
         renderItem={({ item }) => <PlaceItem item={item} />}
       />
@@ -23,6 +24,7 @@ export default function PlacesList({ places }) {
 }
 
 const styles = StyleSheet.create({
+  list: { margin: 24 },
   fallbackContainer: {
     flex: 1,
     alignItems: "center",
