@@ -8,19 +8,14 @@ import { Places } from "../modals/places";
 
 export default function PlaceForm({ onCreatePlace }) {
   const [enteredTitle, setEnteredTitle] = useState("");
-  const [pickedLocation, setPickedLocation] = useState("");
+  const [pickedLocation, setPickedLocation] = useState();
   const [selectedImage, setSelectedImage] = useState("");
   const changeHandler = (enteredText) => {
     setEnteredTitle(enteredText);
   };
   const savePlaceHandler = () => {
-    const placeData = new Places(
-      enteredTitle,
-      selectedImage,
-      pickedLocation.address,
-      pickedLocation
-    );
-    onCreatePlace();
+    const placeData = new Places(enteredTitle, selectedImage, pickedLocation);
+    onCreatePlace(placeData);
   };
 
   const takeImageHandler = (image) => {

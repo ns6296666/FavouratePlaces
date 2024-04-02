@@ -26,5 +26,5 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   pressed: { opacity: 0.7 },
-  text: { fontSize: 16, textAlign: "center", color: "#fff" },
+  text: { fontSize: 16, textAlign: "center" },
 });

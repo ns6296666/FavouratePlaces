@@ -15,4 +15,6 @@ export default function PlaceItem({ item, onSelect }) {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  title: { color: "#fff" },
+});
