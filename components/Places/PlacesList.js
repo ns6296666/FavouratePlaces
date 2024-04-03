@@ -4,6 +4,7 @@ import PlaceItem from "./PlaceItem";
 import { Colors } from "../constants/colors";
 
 export default function PlacesList({ places }) {
+  console.log("PlacesList", places);
   if (!places || places.length === 0 || places === undefined) {
     <View style={styles.fallbackContainer}>
       <Text style={styles.fallbackText}>

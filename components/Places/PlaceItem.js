@@ -3,6 +3,7 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { Colors } from "../constants/colors";
 
 export default function PlaceItem({ item, onSelect }) {
+  console.log("==========", item);
   return (
     <Pressable
       style={({ pressed }) => [styles.item, pressed && styles.pressed]}
