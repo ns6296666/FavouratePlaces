@@ -14,7 +14,11 @@ export default function ImagePicker({ onTakeImage }) {
     useCameraPermissions();
 
   const verifyPermission = async () => {
-    if (cameraPermissionInformation?.status === PermissionStatus.UNDETERMINED) {
+    if (!cameraPermissionInformation) {
+      // Handle the case when cameraPermissionInformation is null
+      return false;
+    }
+    if (cameraPermissionInformation.status === PermissionStatus.UNDETERMINED) {
       const PermissionResponse = await requestPermission();
       return PermissionResponse?.granted;
     }
