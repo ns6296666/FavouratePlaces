@@ -18,7 +18,7 @@ export default function PlacesList({ places }) {
     </View>;
   }
   return (
-    <View>
+    <View style={styles.screen}>
       <FlatList
         data={places}
         style={styles.list}
@@ -32,6 +32,10 @@ export default function PlacesList({ places }) {
 }
 
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    marginBottom: 40,
+  },
   list: { margin: 24 },
   fallbackContainer: {
     flex: 1,

@@ -95,7 +95,6 @@ export function fetchPlaceDetails(id) {
         [id],
 
         (_, result) => {
-          console.log("details", result.rows._array[0]);
           resolve(result.rows._array[0]);
         },
         (_, err) => {

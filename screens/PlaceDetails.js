@@ -17,8 +17,12 @@ function PlaceDetails({ route, navigation }) {
     }
     fetchingDetails();
   }, [selectedPlaceId]);
-
-  const MapHandler = () => {};
+  const MapHandler = () => {
+    navigation.navigate("Map", {
+      initialLat: places.lat,
+      initialLng: places.lng,
+    });
+  };
 
   if (!places) {
     return (
@@ -29,7 +33,7 @@ function PlaceDetails({ route, navigation }) {
   }
   return (
     <ScrollView>
-      <Image style={styles.image} source={{ uri: places.imageUri }} />
+      <Image style={styles.image} source={{ uri: places?.imageUri }} />
       <View>
         <View style={styles.addressContainer}>
           <Text style={styles.address}>{places.address}</Text>
