@@ -3,6 +3,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import OutlinedButton from "../components/UI/OutlinedButton";
 import { Colors } from "../components/constants/colors";
 import { fetchPlaceDetails } from "../components/utils/database";
+import dummy from "../assets/dummy.jpg";
 
 function PlaceDetails({ route, navigation }) {
   const selectedPlaceId = route.params.placeId;
@@ -33,7 +34,17 @@ function PlaceDetails({ route, navigation }) {
   }
   return (
     <ScrollView>
-      <Image style={styles.image} source={{ uri: places?.imageUri }} />
+      {places?.imageUri ? (
+        <Image
+          style={styles.image}
+          source={{
+            uri: places?.imageUri ? places?.imageUri : "../assets/dummy.jpg",
+          }}
+        />
+      ) : (
+        <Image style={styles.image} source={require("../assets/dummy.jpg")} />
+      )}
+
       <View>
         <View style={styles.addressContainer}>
           <Text style={styles.address}>{places.address}</Text>

@@ -76,6 +76,7 @@ export function fetchPlaces() {
               )
             );
           }
+
           resolve(place);
         },
         (_, err) => {
